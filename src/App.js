@@ -23,10 +23,14 @@ const foodILike = [
     image:"https://files.bonif.co.kr/upload/cmdt/BF102_pic_LjMg3BTB.jpg"
   }];
 
+function renderFood(dish){
+  return <Food name={dish.name} picture={dish.image}></Food>
+}
+
 function App() {
   return (
     <div className="App">
-    {foodILike.map(dish => <Food name={dish.name} picture={dish.image}/>)}
+    {foodILike.map(renderFood)}
     </div>
   );
 }
