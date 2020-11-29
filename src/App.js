@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class App extends React.Component{
+  constructor(props){
+    super(props);
+    console.log("hello");
+  }
   state = {
     count:0
   };//component의 데이터를 바꾸기 위해 사용하는 것
@@ -13,7 +17,18 @@ class App extends React.Component{
     this.setState(current => ({count: current.count -1}));
   };
 
+  componentDidMount(){
+    console.log("component randered");
+  }
+  componentDidUpdate(){
+    console.log("I just updated");
+  }
+  componentWillUnmount(){
+    console.log("good bye, cruel world");
+  }
+
   render(){
+    console.log("I am rendering");
   return (
   <div>
     <h1>The number is {this.state.count}</h1>
