@@ -2,40 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class App extends React.Component{
-  constructor(props){
-    super(props);
-    console.log("hello");
-  }
   state = {
-    count:0
-  };//component의 데이터를 바꾸기 위해 사용하는 것
-
-  add = () => {
-    this.setState(current => ({count: current.count +1}));
+    isLoading:true
   };
-  minus = () => {
-    this.setState(current => ({count: current.count -1}));
-  };
-
   componentDidMount(){
-    console.log("component randered");
+    setTimeout(() => {
+      this.setState({isLoading:false, book:true}); //기존 state와 다른 새로운 state(미래의 state)니까 다른 key가 들어가도 상관없음
+    },6000);
   }
-  componentDidUpdate(){
-    console.log("I just updated");
-  }
-  componentWillUnmount(){
-    console.log("good bye, cruel world");
-  }
-
   render(){
-    console.log("I am rendering");
-  return (
-  <div>
-    <h1>The number is {this.state.count}</h1>
-    <button onClick={this.add}>Add</button>
-    <button onClick={this.minus}>Minus</button> 
-  </div>
-  );
+    const {isLoading} = this.state;  //this.state는 state object를 가져온 것
+    return (
+      <div>
+        {isLoading ? "loading..." : "we are ready"}
+      </div>
+    );
   }
 }//class component는 render함수를 자동적으로 실행시킴
 
