@@ -7,10 +7,10 @@ class App extends React.Component{
   };//component의 데이터를 바꾸기 위해 사용하는 것
 
   add = () => {
-    this.setState({count: this.state.count +1});
+    this.setState(current => ({count: current.count +1}));
   };
   minus = () => {
-    this.setState({count: this.state.count -1});
+    this.setState(current => ({count: current.count -1}));
   };
 
   render(){
