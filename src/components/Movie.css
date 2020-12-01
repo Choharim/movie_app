@@ -2,7 +2,7 @@ body {
   background-color: #2f2f2f;
 }
 
-.movies .movie {
+.movies a {
   height: 240px;
   width: 45%;
   background-color: white;
@@ -15,6 +15,16 @@ body {
   border-radius: 5px;
   box-shadow: 0 3px 3px 0 rgba(23, 55, 87, 0.03),
     0 0 5px 1px rgba(0, 0, 0, 0.05);
+}
+
+.movies .movie {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.movies a {
+  text-decoration: none;
 }
 
 .movie img {
@@ -38,6 +48,7 @@ body {
 .movie .movie_title {
   margin-bottom: 5px;
   font-size: 20px;
+  color: black;
 }
 
 .movie .movie_year,

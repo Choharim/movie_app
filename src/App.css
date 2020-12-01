@@ -1,0 +1,18 @@
+#root {
+  flex-direction: column;
+}
+
+#root > div {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#root > div > a {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
+  margin: 30px 20px;
+}
